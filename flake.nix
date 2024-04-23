@@ -18,6 +18,7 @@
           nativeBuildInputs = with pkgs; [ marp-cli ];
           buildPhase = ''
             mkdir -p out
+            cp -R assets out/
             cp -R theme out/
             marp --theme theme/traP.css --allow-local-files -o out/index.html slide.md
           '';
