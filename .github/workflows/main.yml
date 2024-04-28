@@ -16,4 +16,4 @@ jobs:
           nix_path: "nixpkgs=channel:release-23.11"
       - uses: DeterminateSystems/magic-nix-cache-action@v4
       - run: nix build
-      - run: nix flake check
+      - run: nix build .#pdf
