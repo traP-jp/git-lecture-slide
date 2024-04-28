@@ -30,6 +30,12 @@ jobs:
       - run: |
           nix build .
           cp -r result/slide ./slide
+          sudo chown -R "$USER:$USER" slide
+          sudo chmod 755 slide
+      - run: |
+          nix build .#pdf
+          cp result/slide.pdf ./slide/slide.pdf
+          sudo chown "$USER:$USER" slide/slide.pdf
       - name: Upload artifact
         if: ${{ github.event_name != 'pull_request' }}
         uses: actions/upload-pages-artifact@v3
