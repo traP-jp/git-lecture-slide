@@ -27,11 +27,28 @@
             mv out $out/slide
           '';
         };
+        pdf = stdenv.mkDerivation {
+          pname = "git-lecture-slide-pdf";
+          version = "0.1.0";
+          src = ./.;
+          nativeBuildInputs = with pkgs; [ marp-cli ungoogled-chromium ];
+          buildPhase = ''
+            # https://github.com/NixOS/nix/issues/670
+            export HOME="$(pwd)"
+            marp --theme theme/traP.css --allow-local-files -o slide.pdf slide.md
+            chmod 644 slide.pdf
+          '';
+          installPhase = ''
+            mkdir -p $out
+            mv slide.pdf $out/slide.pdf
+          '';
+          CHROME_PATH = "${pkgs.ungoogled-chromium}/bin/chromium";
+        };
       in
       {
         packages = {
           default = html;
-          inherit html;
+          inherit html pdf;
         };
 
         devShells.default = pkgs.mkShell {
