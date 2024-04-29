@@ -31,7 +31,14 @@
           pname = "git-lecture-slide-pdf";
           version = "0.1.0";
           src = ./.;
-          nativeBuildInputs = with pkgs; [ marp-cli ungoogled-chromium ];
+          nativeBuildInputs = with pkgs; [
+            marp-cli
+            ungoogled-chromium
+            fontconfig
+            noto-fonts
+            noto-fonts-cjk-sans
+            noto-fonts-color-emoji
+          ];
           buildPhase = ''
             # https://github.com/NixOS/nix/issues/670
             export HOME="$(pwd)"
@@ -43,6 +50,7 @@
             mv slide.pdf $out/slide.pdf
           '';
           CHROME_PATH = "${pkgs.ungoogled-chromium}/bin/chromium";
+          FONTCONFIG_FILE = "${pkgs.fontconfig.out}/etc/fonts/fonts.conf";
         };
       in
       {
