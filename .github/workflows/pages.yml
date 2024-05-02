@@ -27,15 +27,7 @@ jobs:
         if: ${{ github.event_name != 'pull_request' }}
         id: pages
         uses: actions/configure-pages@v5
-      - run: |
-          nix build .
-          cp -r result/slide ./slide
-          sudo chown -R "$USER:$USER" slide
-          sudo chmod 755 slide
-      - run: |
-          nix build .#pdf
-          cp result/slide.pdf ./slide/slide.pdf
-          sudo chown "$USER:$USER" slide/slide.pdf
+      - run: bash .github/scripts/build-slide.sh
       - name: Upload artifact
         if: ${{ github.event_name != 'pull_request' }}
         uses: actions/upload-pages-artifact@v3
