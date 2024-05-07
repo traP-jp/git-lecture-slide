@@ -339,7 +339,7 @@ Gitを構成する要素を見ていこう
 
 <style scoped>
 h2, ul, p {
-    margin-inline-start: 1rem !important;
+    margin-inline-start: 3rem !important;
 }
 </style>
 
@@ -350,7 +350,7 @@ h2, ul, p {
 - 関連するファイル群を選択し、コミットする範囲を決める
 - 適切な粒度でコミットを作ることができる
 
-![bg left:50% h:50%](https://git-scm.com/images/about/index1@2x.png)
+![bg left:30% h:80%](./assets/staging-area-image.svg)
 
 ---
 
