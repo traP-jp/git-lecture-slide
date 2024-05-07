@@ -35,7 +35,8 @@
             marp-cli
             ungoogled-chromium
             fontconfig
-            noto-fonts
+            roboto
+            jetbrains-mono
             noto-fonts-cjk-sans
             noto-fonts-color-emoji
           ];
