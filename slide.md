@@ -28,18 +28,18 @@ h1, h2 {
 
 ---
 
-# ![](./assets/H1rono.png) @H1rono_K
+# ![](./assets/Pugma.png) @Pugma
 
 <!--
 _class: user
 -->
 
-- ヒロノと言います
-- 22B 数理計算
-- SysAdの人間
-    - Jomon サーバーメンテナー
-    - traPortfolio サーバー
-- 主にRustを書いています
+- 23B 情報工学系
+- 主に SysAd班 で webアプリケーション制作
+  - traPortfolio フロントエンドメンテナー
+  - traQ バックエンド
+  - インフラ担当 / デザイン部
+- 最近Rustの勉強を始めました
 
 ---
 
@@ -430,7 +430,7 @@ h3 {
 - リモートリポジトリを用意するために、サーバーが必要
     - サーバー = みんなで共有できる・みんなが見れるPC
 - 用意する方法
-    - 借りる(traPはConohaを使ってる。他AWSやGCPなど)
+    - 借りる(traPはConoHaを使ってる。他AWSやGCPなど)
     - 買う
 
 <!-- クソでかいお気持ち -->
